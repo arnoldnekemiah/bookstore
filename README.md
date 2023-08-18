@@ -141,6 +141,6 @@ I would like to thank you All Microverse community.
 <!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
-This project is [MIT](./LICENCE) licensed.
+This project is [MIT](https://github.com/arnoldnekemiah/bookstore/blob/initialize-components/LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
