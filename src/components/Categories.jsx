@@ -1,7 +1,7 @@
 function Categories() {
   return (
     <div>
-      <h1>Categories coming soon! Please wait!</h1>
+      <h2>The Categories section is currently Under Construction</h2>
     </div>
   );
 }
