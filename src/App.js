@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import NavigationBar from './components/NavBar';
-import BookList from './components/BookList';
+import BookList from './components/Books';
 import Categories from './components/Categories';
 
 function App() {
