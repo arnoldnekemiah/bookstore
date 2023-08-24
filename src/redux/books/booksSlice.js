@@ -1,44 +1,41 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { addBook, deleteBook, getBooks } from '../api';
 
 const initialState = {
-  books: [
-    {
-      item_id: 'item1',
-      title: 'The Great Gatsby',
-      author: 'John Smith',
-      category: 'Fiction',
-    },
-    {
-      item_id: 'item2',
-      title: 'Anna Karenina',
-      author: 'Leo Tolstoy',
-      category: 'Fiction',
-    },
-    {
-      item_id: 'item3',
-      title: 'The Selfish Gene',
-      author: 'Richard Dawkins',
-      category: 'Nonfiction',
-    },
-  ],
+  value: [],
+  isLoading: false,
+  isError: undefined,
 };
 
 const bookSlice = createSlice({
   name: 'books',
   initialState,
-  reducers: {
-    addBook: (state, action) => {
-      const { title, author } = action.payload;
-      if (!title || !author) {
-        return;
-      }
-      state.books.push(action.payload);
-    },
-    removeBook: (state, action) => {
-      state.books = state.books.filter((book) => book.item_id !== action.payload);
-    },
+  reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(addBook.fulfilled, (state, action) => {
+      state.value.push(action.payload);
+    });
+
+    builder.addCase(deleteBook.fulfilled, (state, action) => {
+      state.value = state.value.filter(
+        (book) => book.item_id !== action.payload,
+      );
+    });
+
+    builder.addCase(getBooks.pending, (state) => {
+      state.isLoading = true;
+    });
+
+    builder.addCase(getBooks.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.value = action.payload;
+    });
+
+    builder.addCase(getBooks.rejected, (state) => {
+      state.isLoading = false;
+      state.isError = true;
+    });
   },
 });
 
-export const { addBook, removeBook } = bookSlice.actions;
 export default bookSlice.reducer;
