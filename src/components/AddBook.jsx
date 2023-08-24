@@ -34,36 +34,38 @@ export default function AddNewBook() {
 
   return (
     <section>
-      <h2>Add New Book</h2>
-      <form>
-        <input
-          value={book.title}
-          type="text"
-          name="title"
-          placeholder="Title"
-          onChange={handleChange}
-        />
+      <div className="form">
+        <h2>Add New Book</h2>
+        <form>
+          <input
+            value={book.title}
+            type="text"
+            name="title"
+            placeholder="Title"
+            onChange={handleChange}
+          />
 
-        <input
-          value={book.author}
-          type="text"
-          name="author"
-          placeholder="Author"
-          onChange={handleChange}
-        />
+          <input
+            value={book.author}
+            type="text"
+            name="author"
+            placeholder="Author"
+            onChange={handleChange}
+          />
 
-        <input
-          value={book.category}
-          type="text"
-          name="category"
-          placeholder="Category"
-          onChange={handleChange}
-        />
+          <input
+            value={book.category}
+            type="text"
+            name="category"
+            placeholder="Category"
+            onChange={handleChange}
+          />
 
-        <button className="add-button" type="submit" onClick={handleSubmit}>
-          Add Book
-        </button>
-      </form>
+          <button type="submit" id="add-book" onClick={handleSubmit}>
+            ADD BOOK
+          </button>
+        </form>
+      </div>
     </section>
   );
 }
