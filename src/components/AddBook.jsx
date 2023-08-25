@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Styles/AddBook.css';
+import '../styles/AddBook.css';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../redux/api';
@@ -29,7 +29,7 @@ export default function AddNewBook() {
       item_id: uuidv4(),
     };
     dispatch(addBook(newBook));
-    setBook(initialBook); // Change this line
+    setBook(initialBook);
   }
 
   return (
@@ -42,6 +42,7 @@ export default function AddNewBook() {
             type="text"
             name="title"
             placeholder="Title"
+            className="title-input"
             onChange={handleChange}
           />
 

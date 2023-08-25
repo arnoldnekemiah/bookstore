@@ -1,7 +1,7 @@
 import { useEffect, React } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Book from './Book';
-import './Styles/BookList.css';
+import '../styles/BookList.css';
 import { deleteBook, getBooks } from '../redux/api';
 
 function BookList() {
@@ -19,7 +19,7 @@ function BookList() {
     <>
       {loading}
       {error}
-      <ul style={{ listStyle: 'none' }}>
+      <ul className="book-list-container">
         {value.map((book) => (
           <li key={book.item_id}>
             <Book

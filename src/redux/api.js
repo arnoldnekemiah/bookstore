@@ -6,7 +6,7 @@ export const addBook = createAsyncThunk(
   async (book) => { // Corrected the syntax here
     try {
       await axios.post(
-        'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/GYyCqiiRoOj0083JgG28/books',
+        'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/tWk1l39lfUnyyh6yELcl/books',
         book,
       );
     } catch (e) {
@@ -21,7 +21,7 @@ export const deleteBook = createAsyncThunk(
   async (bookID) => {
     try {
       await axios.delete(
-        `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/GYyCqiiRoOj0083JgG28/books/${bookID}`,
+        `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/tWk1l39lfUnyyh6yELcl/books/${bookID}`,
       );
     } catch (e) {
       throw new Error(e);
@@ -32,7 +32,7 @@ export const deleteBook = createAsyncThunk(
 
 export const getBooks = createAsyncThunk('books/getBooks', async () => {
   const response = await axios.get(
-    'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/GYyCqiiRoOj0083JgG28/books',
+    'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/tWk1l39lfUnyyh6yELcl/books',
   );
   const books = Object.entries(response.data).map((item) => ({
     ...item[1][0],
