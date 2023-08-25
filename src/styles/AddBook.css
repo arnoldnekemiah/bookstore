@@ -13,10 +13,31 @@ h2 {
   margin-bottom: 10px;
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form h2 {
+  width: 10.875rem;
+  height: 1.5rem;
+  margin: 1.813rem 32.75rem 1.188rem 0;
+  padding-left: 1rem;
+  font-family: Montserrat, sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.18px;
+  color: #888;
+}
+
 form {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  gap: 32px;
+  margin-left: 16px;
 }
 
 .input-container {
@@ -25,12 +46,8 @@ form {
   width: 100%;
 }
 
-.title-input input {
-  margin: 5px 10px 5px 0;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 200%; /* Takes up 3/4 of the available space */
+input {
+  width: 28%;
 }
 
 #add-book {

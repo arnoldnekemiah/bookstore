@@ -1,8 +1,7 @@
 import React from 'react';
-import { FaUserCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import './Styles/NavBar.css';
-import styles from './Styles/Component.module.css';
+import { FaUserCircle } from 'react-icons/fa';
+import '../styles/NavBar.css';
 
 function NavigationBar() {
   return (
@@ -13,12 +12,12 @@ function NavigationBar() {
           <nav>
             <ul>
               <li>
-                <Link to="/" className={styles.link}>
+                <Link to="/" className="cat">
                   BOOKS
                 </Link>
               </li>
               <li>
-                <Link to="/Categories" className={styles.link}>
+                <Link to="/Categories" className="cat blur">
                   CATEGORIES
                 </Link>
               </li>
